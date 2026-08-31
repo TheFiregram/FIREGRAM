@@ -16,54 +16,64 @@
   <link rel="stylesheet" href="styles/components.css" />
   <link rel="stylesheet" href="styles/responsive.css" />
   <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/app-shell.css" />
 </head>
-<body>
+<body class="portfolio-app">
   <canvas id="ambientCanvas" aria-hidden="true"></canvas>
   <div class="noise" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-  <header class="topbar glass" id="topbar">
-    <a class="brand" href="#home" aria-label="FIREGRAM home">
-      <span class="brand-mark">FG</span>
-      <span class="brand-text">FIREGRAM</span>
-    </a>
+  <div class="app-shell">
+    <aside class="desktop-rail glass" aria-label="Portfolio navigation">
+      <a class="rail-brand" href="#/home" aria-label="FIREGRAM home">
+        <span class="brand-mark">FG</span>
+        <span><strong>FIREGRAM</strong><small>Portfolio / 2026</small></span>
+      </a>
 
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#strengths">Strengths</a>
-      <a href="#work">Work</a>
-      <a href="#proof">POW</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav class="rail-nav" id="routeNav">
+        <a href="#/home" data-route="home"><span>01</span>Overview</a>
+        <a href="#/work" data-route="work"><span>02</span>Selected Work</a>
+        <a href="#/strengths" data-route="strengths"><span>03</span>Strengths</a>
+        <a href="#/proof" data-route="proof"><span>04</span>Proof of Work</a>
+        <a href="#/experience" data-route="experience"><span>05</span>Experience</a>
+        <a href="#/about" data-route="about"><span>06</span>About</a>
+        <a href="#/contact" data-route="contact"><span>07</span>Contact</a>
+      </nav>
 
-    <div class="nav-actions">
-      <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" title="Toggle interface sound">
-        <span class="sound-dot"></span>
-        <span class="sound-label">Sound off</span>
-      </button>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
+      <div class="rail-bottom">
+        <div class="rail-status"><i></i><span><strong>Remote-first</strong><small>Available worldwide</small></span></div>
+        <div class="rail-socials">
+          <a href="https://x.com/TheFiregram" target="_blank" rel="noreferrer">X</a>
+          <a href="https://github.com/TheFiregram" target="_blank" rel="noreferrer">GH</a>
+          <a href="https://www.linkedin.com/in/firegram" target="_blank" rel="noreferrer">IN</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="app-workspace">
+      <header class="workspace-bar glass">
+        <div class="workspace-route">
+          <span id="routeIndex">01</span>
+          <div><strong id="routeTitle">Overview</strong><small id="routeMeta">FIREGRAM / PORTFOLIO</small></div>
+        </div>
+        <div class="workspace-actions">
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" title="Toggle interface sound"><span class="sound-dot"></span><span class="sound-label">Sound off</span></button>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+        </div>
+      </header>
+
+      <main id="siteContent" class="view-stage" aria-live="polite"></main>
     </div>
-  </header>
-
-  <main id="siteContent" aria-live="polite"></main>
-
-  <footer>
-    <a class="brand footer-brand" href="#home">
-      <span class="brand-mark">FG</span>
-      <span class="brand-text">FIREGRAM</span>
-    </a>
-    <p>Built around proof, judgment and work that ships.</p>
-    <span>© <span id="year"></span> FIREGRAM</span>
-  </footer>
+  </div>
 
   <div class="mobile-menu glass" id="mobileMenu" aria-hidden="true">
-    <a href="#strengths">Strengths</a>
-    <a href="#work">Work</a>
-    <a href="#proof">POW</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+    <a href="#/home" data-route="home">Overview</a>
+    <a href="#/work" data-route="work">Selected Work</a>
+    <a href="#/strengths" data-route="strengths">Strengths</a>
+    <a href="#/proof" data-route="proof">Proof of Work</a>
+    <a href="#/experience" data-route="experience">Experience</a>
+    <a href="#/about" data-route="about">About</a>
+    <a href="#/contact" data-route="contact">Contact</a>
   </div>
 
   <script type="module" src="app.js"></script>
