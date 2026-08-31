@@ -4,30 +4,52 @@ Portfolio website for FIREGRAM / Olayemi Qudus.
 
 The site presents product thinking, AI engineering, software engineering, startup product development, community operations, Web3, creative direction, teaching, selected work and Proof of Work.
 
-## Current repository structure
+## Source structure
 
-- `index.html` · production entry point
-- `payload-1.js` → `payload-4.js` · compressed production snapshot containing the complete portfolio UI, styling, content, interactions and embedded media
-- `vercel.json` · static deployment headers and routing configuration
-- `README.md` · project notes
+- `index.html` · readable production entry point and shared navigation/footer shell
+- `app.js` · loads the portfolio sections, then starts the POW and interaction scripts
+- `script.js` · animations, mobile navigation, card tilt, cursor glow, optional sound and ambient particles
+- `proof-data.js` · data-driven Proof of Work entries
+- `sections/` · one readable HTML file per portfolio section
+  - `hero.html`
+  - `intro.html`
+  - `strengths.html`
+  - `work.html`
+  - `proof.html`
+  - `experience.html`
+  - `experiments.html`
+  - `contact.html`
+- `styles/base.css` · foundation, navigation and hero styling
+- `styles/components.css` · portfolio sections, cards, projects, POW, timeline and contact styling
+- `styles/responsive.css` · tablet, mobile and reduced-motion behavior
+- `assets/firegram-profile.webp` · portrait asset
+- `assets/favicon.svg` · portfolio favicon
+- `vercel.json` · Vercel headers and static deployment settings
 
-The payload is split across four files so the current production build can be transferred reliably through the connected GitHub integration. The browser reconstructs the full portfolio at load time.
+The old compressed payload build has been removed. The repository now contains the actual editable source used by the site.
 
-## Included portfolio areas
+## Proof of Work
 
-- Product Thinking & Problem Solving
-- AI Engineering
-- Software Engineering
-- Startup Product Development
-- Community Operations
-- Web3
-- Creative Direction & AI Media
-- Teaching & Knowledge Sharing
-- Selected Work
-- POW / Proof of Work
-- Career Experience
-- Education
-- Experimental Lab
+Add new proof entries in `proof-data.js`. Each entry supports category filters, links, image media and browser-playable video media.
+
+Example:
+
+```js
+{
+  title: "Name of proof",
+  category: ["product", "software"],
+  type: "Case study",
+  description: "What this proof demonstrates.",
+  link: "https://...",
+  linkLabel: "Open proof",
+  visual: "code",
+  media: "assets/proof/example.jpg",
+  mediaType: "image",
+  mediaAlt: "Description of the proof image"
+}
+```
+
+Supported filters: `product`, `ai`, `software`, `community`, `web3`, `creative`, `teaching`.
 
 ## Featured work
 
@@ -49,4 +71,4 @@ Then open `http://localhost:4173`.
 
 The site is static and ready for Vercel. `vercel.json` is included in the repository.
 
-Current Vercel naming is temporary while the final `*.vercel.app` alias is being decided.
+The current Vercel naming is temporary while the final `*.vercel.app` alias is being decided.
