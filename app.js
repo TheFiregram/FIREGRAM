@@ -40,10 +40,7 @@ function updateChrome(route) {
   document.querySelector('#routeTitle').textContent = data.title;
   document.querySelector('#routeMeta').textContent = data.meta;
   document.title = `${data.title} · FIREGRAM`;
-
-  document.querySelectorAll('[data-route]').forEach(link => {
-    link.classList.toggle('active', link.dataset.route === route);
-  });
+  document.querySelectorAll('[data-route]').forEach(link => link.classList.toggle('active', link.dataset.route === route));
 }
 
 async function renderRoute() {
@@ -68,5 +65,5 @@ async function renderRoute() {
 }
 
 addEventListener('hashchange', renderRoute);
-if (!location.hash || location.hash === '#') location.replace('#/home');
-else renderRoute();
+if (!location.hash || location.hash === '#') history.replaceState(null, '', '#/home');
+renderRoute();
