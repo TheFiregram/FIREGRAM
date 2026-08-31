@@ -71,4 +71,4 @@ Then open `http://localhost:4173`.
 
 The site is static and ready for Vercel. `vercel.json` is included in the repository.
 
-The current Vercel naming is temporary while the final `*.vercel.app` alias is being decided.
+Production is connected to the Vercel project `firegram-portfolio` from the `main` branch. A fresh commit after connecting the repository was made to trigger the first Git-based production deployment.
