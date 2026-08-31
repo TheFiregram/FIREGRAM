@@ -1,41 +1,43 @@
 # FIREGRAM PORTFOLIO
 
-A single-page portfolio for FIREGRAM / Olayemi Qudus.
+Portfolio website for FIREGRAM / Olayemi Qudus.
 
-## Structure
+The site presents product thinking, AI engineering, software engineering, startup product development, community operations, Web3, creative direction, teaching, selected work and Proof of Work.
 
-- `index.html` · page content and sections
-- `styles.css` · liquid-glass UI, responsive layout and visual effects
-- `script.js` · animation, filters, optional interface sound and ambient canvas
-- `proof-data.js` · Proof of Work entries
-- `assets/firegram-profile.webp` · profile portrait
+## Current repository structure
 
-## Add Proof of Work
+- `index.html` · production entry point
+- `payload-1.js` → `payload-4.js` · compressed production snapshot containing the complete portfolio UI, styling, content, interactions and embedded media
+- `vercel.json` · static deployment headers and routing configuration
+- `README.md` · project notes
 
-Open `proof-data.js` and add an object to `window.FIREGRAM_PROOF`.
+The payload is split across four files so the current production build can be transferred reliably through the connected GitHub integration. The browser reconstructs the full portfolio at load time.
 
-```js
-{
-  title: "Name of proof",
-  category: ["product", "software"],
-  type: "Case study",
-  description: "Short explanation of what the proof demonstrates.",
-  link: "https://...",
-  linkLabel: "Open proof",
-  visual: "code",
-  media: "assets/proof/example.jpg",
-  mediaType: "image",
-  mediaAlt: "Description of the proof image"
-}
-```
+## Included portfolio areas
 
-For a video, set `mediaType: "video"` and point `media` to an MP4 or browser-playable video file. Leave `media` out to use the built-in visual placeholder.
+- Product Thinking & Problem Solving
+- AI Engineering
+- Software Engineering
+- Startup Product Development
+- Community Operations
+- Web3
+- Creative Direction & AI Media
+- Teaching & Knowledge Sharing
+- Selected Work
+- POW / Proof of Work
+- Career Experience
+- Education
+- Experimental Lab
 
-Supported filters: `product`, `ai`, `software`, `community`, `web3`, `creative`, `teaching`.
+## Featured work
+
+- RiskMulate · browser-based interactive risk-management simulation
+- WalletGPT · AI-powered on-chain wallet explainer
+- GRAMVERTER · live crypto and fiat conversion product
 
 ## Run locally
 
-Any static server works:
+Use any static web server from the repository root:
 
 ```bash
 python3 -m http.server 4173
@@ -45,4 +47,6 @@ Then open `http://localhost:4173`.
 
 ## Deployment
 
-This is a static site and can be deployed directly to Vercel, Netlify or GitHub Pages.
+The site is static and ready for Vercel. `vercel.json` is included in the repository.
+
+Current Vercel naming is temporary while the final `*.vercel.app` alias is being decided.
