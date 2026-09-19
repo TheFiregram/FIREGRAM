@@ -136,6 +136,13 @@ html[data-route-direction="previous"]::view-transition-new(portfolio-section) {
   .home-hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(290px, .72fr) !important;
     gap: clamp(48px, 6vw, 96px) !important;
+    min-height: 640px !important;
+  }
+
+  .home-view {
+    height: auto !important;
+    min-height: 100% !important;
+    grid-template-rows: auto auto !important;
   }
 }
 
