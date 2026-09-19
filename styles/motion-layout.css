@@ -1,0 +1,154 @@
+/* Editorial top navigation and continuous route handoff */
+
+.view-stage {
+  view-transition-name: portfolio-section;
+  contain: layout paint;
+}
+
+::view-transition-group(portfolio-section) {
+  animation-duration: 620ms;
+  animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+  overflow: clip;
+}
+
+::view-transition-image-pair(portfolio-section) {
+  isolation: isolate;
+}
+
+::view-transition-old(portfolio-section),
+::view-transition-new(portfolio-section) {
+  animation-duration: 620ms;
+  animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+  mix-blend-mode: normal;
+}
+
+html[data-route-direction="next"]::view-transition-old(portfolio-section) {
+  animation-name: route-old-next;
+}
+
+html[data-route-direction="next"]::view-transition-new(portfolio-section) {
+  animation-name: route-new-next;
+}
+
+html[data-route-direction="previous"]::view-transition-old(portfolio-section) {
+  animation-name: route-old-previous;
+}
+
+html[data-route-direction="previous"]::view-transition-new(portfolio-section) {
+  animation-name: route-new-previous;
+}
+
+@keyframes route-old-next {
+  to { opacity: 0; transform: translate3d(0, -5.5%, 0) scale(.985); filter: blur(5px); }
+}
+
+@keyframes route-new-next {
+  from { opacity: 0; transform: translate3d(0, 7%, 0) scale(1.012); filter: blur(7px); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+}
+
+@keyframes route-old-previous {
+  to { opacity: 0; transform: translate3d(0, 5.5%, 0) scale(.985); filter: blur(5px); }
+}
+
+@keyframes route-new-previous {
+  from { opacity: 0; transform: translate3d(0, -7%, 0) scale(1.012); filter: blur(7px); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+}
+
+@media (min-width: 901px) {
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: 72px minmax(0, 1fr) !important;
+  }
+
+  .desktop-rail {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--tr-line) !important;
+    padding: 0 22px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: clamp(22px, 3vw, 52px) !important;
+    min-width: 0;
+  }
+
+  .rail-brand {
+    flex: 0 0 auto;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .rail-nav {
+    min-width: 0;
+    padding: 0 !important;
+    flex: 1 1 auto;
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 2px !important;
+  }
+
+  .rail-nav a {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 6px !important;
+    padding: 10px clamp(8px, 1vw, 14px) !important;
+    white-space: nowrap;
+  }
+
+  .rail-nav a.active::before {
+    left: 10px !important;
+    right: 10px;
+    top: auto !important;
+    bottom: 3px !important;
+    width: auto !important;
+    height: 2px;
+  }
+
+  .rail-bottom {
+    flex: 0 0 auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rail-status small,
+  .rail-socials {
+    display: none !important;
+  }
+
+  .app-workspace {
+    grid-template-rows: 46px minmax(0, 1fr) !important;
+  }
+
+  .workspace-bar {
+    padding: 0 clamp(24px, 3.5vw, 54px) !important;
+  }
+
+  .view-stage > .section,
+  .view-stage > .home-view {
+    width: min(100%, 1320px) !important;
+    padding: clamp(34px, 4vw, 64px) !important;
+  }
+
+  .home-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(290px, .72fr) !important;
+    gap: clamp(48px, 6vw, 96px) !important;
+  }
+}
+
+@media (max-width: 1120px) and (min-width: 901px) {
+  .rail-nav a span,
+  .rail-status {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view-stage { view-transition-name: none; }
+  ::view-transition-group(portfolio-section),
+  ::view-transition-old(portfolio-section),
+  ::view-transition-new(portfolio-section) { animation: none; }
+}

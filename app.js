@@ -99,6 +99,21 @@ function setRouteScrollPosition(position) {
   });
 }
 
+function setRouteScrollPositionNow(position) {
+  if (desktopLayout.matches) {
+    siteContent.scrollTop = position === 'end'
+      ? Math.max(0, siteContent.scrollHeight - siteContent.clientHeight)
+      : 0;
+    return;
+  }
+
+  const page = document.scrollingElement;
+  const top = position === 'end'
+    ? Math.max(0, page.scrollHeight - page.clientHeight)
+    : 0;
+  window.scrollTo(0, top);
+}
+
 async function loadScript(src) {
   return new Promise((resolve, reject) => {
     if ([...document.scripts].some(s => s.src.endsWith(src))) return resolve();
@@ -132,7 +147,7 @@ function finishRouteTransition() {
     siteContent.classList.remove('is-route-switching', 'route-enter');
     siteContent.removeAttribute('data-route-direction');
     navigationLocked = false;
-  }, reduceMotion ? 0 : 420);
+  }, reduceMotion ? 0 : 680);
 }
 
 async function renderRoute() {
@@ -145,11 +160,13 @@ async function renderRoute() {
     : 0;
   const direction = pendingDirection || inferredDirection;
   const scrollPosition = pendingScrollPosition;
+  const useNativeTransition = !reduceMotion && Boolean(document.startViewTransition) && Boolean(previousRoute);
 
   navigationLocked = true;
   updateChrome(route);
   siteContent.classList.remove('route-enter');
-  siteContent.classList.add('is-loading', 'is-route-switching');
+  siteContent.classList.add('is-route-switching');
+  if (!useNativeTransition) siteContent.classList.add('is-loading');
   siteContent.dataset.routeDirection = direction < 0 ? 'previous' : 'next';
 
   try {
@@ -158,18 +175,28 @@ async function renderRoute() {
     const html = await response.text();
     if (sequence !== renderSequence) return;
 
-    siteContent.innerHTML = html;
     await ensureScripts();
     if (sequence !== renderSequence) return;
 
-    window.FIREGRAM_INIT?.();
-    lastRenderedRoute = route;
-    setRouteScrollPosition(scrollPosition);
-
-    requestAnimationFrame(() => {
+    const swapRouteContent = () => {
+      siteContent.innerHTML = html;
+      window.FIREGRAM_INIT?.();
+      lastRenderedRoute = route;
+      setRouteScrollPositionNow(scrollPosition);
       siteContent.classList.remove('is-loading');
-      siteContent.classList.add('route-enter');
-    });
+    };
+
+    if (useNativeTransition) {
+      document.documentElement.dataset.routeDirection = direction < 0 ? 'previous' : 'next';
+      const transition = document.startViewTransition(swapRouteContent);
+
+      transition.finished.finally(() => {
+        delete document.documentElement.dataset.routeDirection;
+      });
+    } else {
+      swapRouteContent();
+      requestAnimationFrame(() => siteContent.classList.add('route-enter'));
+    }
   } catch (error) {
     console.error(error);
     siteContent.innerHTML = '<section class="section load-error"><p>Portfolio content could not be loaded. Please refresh the page.</p></section>';
