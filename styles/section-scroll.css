@@ -1,0 +1,49 @@
+/* Scroll-locked route transitions */
+.view-stage{
+  overscroll-behavior-y:contain;
+  scroll-behavior:smooth;
+  scrollbar-gutter:stable;
+  scroll-snap-type:y proximity;
+}
+
+.view-stage>.section,
+.view-stage>.home-view{
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+  transform-origin:center center;
+}
+
+.view-stage.is-route-switching{
+  overscroll-behavior:none;
+}
+
+.view-stage.route-enter[data-route-direction="next"]>.section,
+.view-stage.route-enter[data-route-direction="next"]>.home-view{
+  animation:sectionEnterNext .4s cubic-bezier(.22,.72,.2,1) both;
+}
+
+.view-stage.route-enter[data-route-direction="previous"]>.section,
+.view-stage.route-enter[data-route-direction="previous"]>.home-view{
+  animation:sectionEnterPrevious .4s cubic-bezier(.22,.72,.2,1) both;
+}
+
+@keyframes sectionEnterNext{
+  from{opacity:0;transform:translateY(24px) scale(.992)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@keyframes sectionEnterPrevious{
+  from{opacity:0;transform:translateY(-24px) scale(.992)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media(max-width:900px){
+  html,body{overscroll-behavior-y:contain}
+  .view-stage{scroll-snap-type:none;scroll-behavior:auto}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .view-stage{scroll-behavior:auto}
+  .view-stage.route-enter[data-route-direction]>.section,
+  .view-stage.route-enter[data-route-direction]>.home-view{animation:none}
+}
