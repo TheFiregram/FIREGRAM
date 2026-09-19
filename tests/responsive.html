@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Firegram responsive preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 13px system-ui, sans-serif; background: #373530; color: #eee; }
+    header { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 12px 24px; background: #141310; }
+    button { min-height: 44px; border: 1px solid #777; color: #eee; background: transparent; padding: 0 16px; cursor: pointer; }
+    button[aria-pressed="true"] { background: #e9e5dc; color: #141310; }
+    iframe { display: block; width: 390px; height: 844px; max-width: 100%; margin: 20px auto; border: 0; background: #141310; }
+  </style>
+</head>
+<body>
+  <header><span>Responsive QA</span><button type="button" data-width="320" aria-pressed="false">Small 320</button><button type="button" data-width="390" aria-pressed="true">Mobile 390</button><button type="button" data-width="768" aria-pressed="false">Tablet 768</button><button type="button" data-width="1280" aria-pressed="false">Desktop 1280</button><span id="size" role="status">390 × 844</span></header>
+  <iframe id="preview" title="Portfolio preview" src="../"></iframe>
+  <script>
+    document.querySelectorAll("button").forEach((button) => button.addEventListener("click", () => {
+      document.getElementById("preview").style.width = button.dataset.width + "px";
+      document.getElementById("size").textContent = button.dataset.width + " × 844";
+      document.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    }));
+  </script>
+</body>
+</html>

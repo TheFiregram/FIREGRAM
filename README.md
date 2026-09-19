@@ -1,74 +1,48 @@
-# FIREGRAM PORTFOLIO
+# Firegram portfolio
 
-Portfolio website for FIREGRAM / Olayemi Qudus.
+A cinematic, continuous-scroll portfolio for Firegram / Olayemi Qudus.
 
-The site presents product thinking, AI engineering, software engineering, startup product development, community operations, Web3, creative direction, teaching, selected work and Proof of Work.
+## Current source
 
-## Source structure
+- `index.html`: complete semantic page, navigation, work, about, proof, experience, and contact.
+- `styles/portfolio.css`: the design system, responsive layouts, motion, and print styles.
+- `portfolio.js`: accessible menu, native anchor navigation, progressive reveals, motion preference, and proof filters.
+- `proof-data.js`: ten editable proof records and their original links.
+- `assets/hero-sculpture.webp`: original generated editorial artwork.
+- `assets/riskmulate.webp`, `assets/walletgpt.webp`, `assets/gramverter.webp`: actual product captures.
+- `tests/portfolio.test.cjs`: DOM-level regression checks.
+- `tests/responsive.html`: noindex, same-origin responsive preview at 320, 390, 768, and 1280 CSS pixels.
+- `docs/design-direction.md`: design decisions, motion map, and asset provenance.
 
-- `index.html` · readable production entry point and shared navigation/footer shell
-- `app.js` · loads the portfolio sections, then starts the POW and interaction scripts
-- `script.js` · animations, mobile navigation, card tilt, cursor glow, optional sound and ambient particles
-- `proof-data.js` · data-driven Proof of Work entries
-- `sections/` · one readable HTML file per portfolio section
-  - `hero.html`
-  - `intro.html`
-  - `strengths.html`
-  - `work.html`
-  - `proof.html`
-  - `experience.html`
-  - `experiments.html`
-  - `contact.html`
-- `styles/base.css` · foundation, navigation and hero styling
-- `styles/components.css` · portfolio sections, cards, projects, POW, timeline and contact styling
-- `styles/responsive.css` · tablet, mobile and reduced-motion behavior
-- `assets/firegram-profile.webp` · portrait asset
-- `assets/favicon.svg` · portfolio favicon
-- `vercel.json` · Vercel headers and static deployment settings
+The older `app.js`, `script.js`, `sections/`, and previous stylesheets remain for reference. None is loaded by the new site. The existing portrait asset is not used.
 
-The old compressed payload build has been removed. The repository now contains the actual editable source used by the site.
+## Run
 
-## Proof of Work
-
-Add new proof entries in `proof-data.js`. Each entry supports category filters, links, image media and browser-playable video media.
-
-Example:
-
-```js
-{
-  title: "Name of proof",
-  category: ["product", "software"],
-  type: "Case study",
-  description: "What this proof demonstrates.",
-  link: "https://...",
-  linkLabel: "Open proof",
-  visual: "code",
-  media: "assets/proof/example.jpg",
-  mediaType: "image",
-  mediaAlt: "Description of the proof image"
-}
-```
-
-Supported filters: `product`, `ai`, `software`, `community`, `web3`, `creative`, `teaching`.
-
-## Featured work
-
-- RiskMulate · browser-based interactive risk-management simulation
-- WalletGPT · AI-powered on-chain wallet explainer
-- GRAMVERTER · live crypto and fiat conversion product
-
-## Run locally
-
-Use any static web server from the repository root:
+No build or production dependency is required. Serve this folder with any static HTTP server, for example:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173`.
+## Test
 
-## Deployment
+Install jsdom 26.1.0 in a separate tools directory, then run:
 
-The site is static and ready for Vercel. `vercel.json` is included in the repository.
+```bash
+JSDOM_MODULE_PATH=/absolute/path/to/tools/node_modules/jsdom node tests/portfolio.test.cjs
+node --check portfolio.js
+```
 
-Production is connected to the Vercel project `firegram-portfolio` from the `main` branch. A fresh commit after connecting the repository was made to trigger the first Git-based production deployment.
+The DOM tests model scroll, media queries, dialog, and intersection observation. They do not replace visual browser testing. Open `/tests/responsive` to test actual responsive layouts in an iframe.
+
+## Interaction notes
+
+Native page scroll is never intercepted. Anchor navigation uses smooth scrolling for pointer actions only. Keyboard navigation is immediate and focuses the destination heading. Legacy `#/work`, `#/about`, `#/strengths`, and the other previous section links still resolve.
+
+Motion respects the OS reduced-motion preference. The footer control can disable decorative motion and saves the choice locally. No scrolling library, autoplay media, sound, custom cursor, or perpetual animation is loaded.
+
+JavaScript failure leaves the main content and links readable. The proof archive remains available without the interactive filters.
+
+## Deploy
+
+Vercel project `firegram-portfolio` deploys the `main` branch of `TheFiregram/FIREGRAM`. Static hosting configuration is in `vercel.json`.
