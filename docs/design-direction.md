@@ -36,6 +36,8 @@ No wheel or touch scroll hijacking. No artificial loader, sound, perpetual anima
 
 ## Asset provenance
 
+Barlow Condensed and Manrope are served locally, preloaded, and subset for this page's Latin text, punctuation, and arrows. Their SIL Open Font License files are in `assets/fonts/`. The condensed display fallback is sized to prevent heading overflow during font loading.
+
 The three work images were captured from the real live sites on 2026-09-19:
 
 - https://riskmulate.vercel.app

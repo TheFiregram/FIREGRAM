@@ -1,5 +1,24 @@
 /* Firegram / cinematic portfolio
    One stylesheet, native document scrolling, progressive motion. */
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../assets/fonts/barlow-condensed-600.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../assets/fonts/manrope-variable.woff") format("woff");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Display Fallback";
+  src: local("Arial");
+  size-adjust: 64%;
+}
 :root {
   color-scheme: dark;
   --ink: #141310;
@@ -11,7 +30,7 @@
   --rule: rgb(244 240 232 / 17%);
   --gutter: clamp(24px, 5.3vw, 88px);
   --body: "Manrope", sans-serif;
-  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --display: "Barlow Condensed", "Display Fallback", "Arial Narrow", sans-serif;
   --ease-dramatic: cubic-bezier(.77, 0, .175, 1);
   --spring-smooth: cubic-bezier(.22, 1, .36, 1);
   --ease-utility: cubic-bezier(.65, 0, .35, 1);
@@ -47,8 +66,8 @@ button { background: none; border: 0; }
 .section-topline { display: flex; justify-content: space-between; gap: 24px; padding-bottom: 34px; border-bottom: 1px solid var(--rule); }
 .text-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 44px; font-size: 12px; font-weight: 600; border-bottom: 1px solid currentColor; }
 .text-link span { display: inline-block; font-size: 21px; transition: transform 240ms var(--spring-smooth); }
-.site-header { height: 100px; padding: 0 var(--gutter); display: flex; align-items: center; gap: 44px; position: fixed; z-index: 30; inset: 0 0 auto; transition: background-color 250ms var(--ease-utility), height 250ms var(--ease-utility); }
-.site-header.is-scrolled { height: 76px; background: rgb(20 19 16 / 94%); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.site-header { height: 100px; padding: 0 var(--gutter); display: flex; align-items: center; gap: 44px; position: fixed; z-index: 30; inset: 0 0 auto; transition: background-color 250ms var(--ease-utility); }
+.site-header.is-scrolled { background: rgb(20 19 16 / 94%); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
 .wordmark { display: inline-flex; align-items: baseline; gap: 3px; font-weight: 700; font-size: 28px; line-height: 1; letter-spacing: -.055em; min-height: 44px; padding-top: 8px; }
 .brand-spark { color: var(--accent); font-size: 26px; font-family: Georgia, serif; font-weight: 400; }
 .header-note { font-size: 9px; line-height: 1.55; color: var(--muted); margin-right: auto; }
@@ -71,7 +90,7 @@ button { background: none; border: 0; }
 .hero-content > .eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; color: #d3c0ac; margin-bottom: 28px; }
 .small-spark { font-size: 21px; line-height: 1; }
 h1 { font-family: var(--display); text-transform: uppercase; font-size: clamp(100px, 13.8vw, 210px); font-weight: 600; line-height: .83; letter-spacing: -.025em; }
-.title-line { display: block; padding: 0 0 .11em; overflow: clip; }
+.title-line { display: block; padding: 0 0 .11em; overflow: clip; white-space: nowrap; }
 .title-line > span { display: block; }
 .title-stop { color: var(--accent); }
 .hero-description { font-size: 12px; line-height: 1.75; margin: 27px auto 24px; max-width: 470px; color: #e7e0d5; }
@@ -272,7 +291,7 @@ h1 { font-family: var(--display); text-transform: uppercase; font-size: clamp(10
   .role-marker { left: auto; right: 0; top: 30px; }
 }
 @media (max-width: 767px) {
-  html { scroll-padding-top: 90px; }
+  html { scroll-padding-top: 76px; }
   body { font-size: 14px; }
   .section-pad { padding: 70px var(--gutter); }
   .site-header, .site-header.is-scrolled { height: 76px; }

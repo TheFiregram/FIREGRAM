@@ -9,6 +9,7 @@ A cinematic, continuous-scroll portfolio for Firegram / Olayemi Qudus.
 - `portfolio.js`: accessible menu, native anchor navigation, progressive reveals, motion preference, and proof filters.
 - `proof-data.js`: ten editable proof records and their original links.
 - `assets/hero-sculpture.webp`: original generated editorial artwork.
+- `assets/fonts/`: preloaded, self-hosted fonts and their license files.
 - `assets/riskmulate.webp`, `assets/walletgpt.webp`, `assets/gramverter.webp`: actual product captures.
 - `tests/portfolio.test.cjs`: DOM-level regression checks.
 - `tests/responsive.html`: noindex, same-origin responsive preview at 320, 390, 768, and 1280 CSS pixels.
