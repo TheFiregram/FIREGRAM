@@ -197,7 +197,7 @@
     number.className = "proof-index";
     number.textContent = String(index + 1).padStart(2, "0");
     const content = document.createElement("div");
-    const title = document.createElement("h3");
+    const title = document.createElement("h4");
     title.textContent = entry.title;
     const description = document.createElement("p");
     description.textContent = entry.description;
@@ -205,10 +205,13 @@
     const type = document.createElement("span");
     type.className = "proof-type";
     type.textContent = entry.type;
-    const arrow = document.createElement("span");
-    arrow.className = "proof-arrow";
+    const arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    arrow.setAttribute("class", "arrow-icon proof-arrow");
     arrow.setAttribute("aria-hidden", "true");
-    arrow.textContent = "↗";
+    arrow.setAttribute("focusable", "false");
+    const arrowShape = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    arrowShape.setAttribute("href", "#icon-arrow");
+    arrow.append(arrowShape);
     link.append(number, content, type, arrow);
     proofList.append(link);
     return { element: link, categories: entry.category };
@@ -240,7 +243,6 @@
     proofList.textContent = "The full collection is available in the proof archive below.";
   }
 
-  document.getElementById("year").textContent = String(new Date().getFullYear());
   applyMotion();
   if (window.location.hash) {
     const target = sectionFromHash(window.location.hash);

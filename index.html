@@ -3,136 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#141310">
-  <meta name="description" content="Firegram is a product-minded builder working across software, AI, and communities. Explore the work, the thinking, and the proof.">
-  <meta property="og:title" content="Firegram · Ideas into existence.">
-  <meta property="og:description" content="Digital products. AI experiments. Communities with direction. Selected work by Firegram.">
+  <meta name="theme-color" content="#141619">
+  <meta name="description" content="I’m Firegram. I build web apps, create AI images and videos, and manage projects and online communities. See my work and get in touch.">
+  <meta property="og:title" content="Firegram · Web apps, AI content & communities">
+  <meta property="og:description" content="Web apps, AI images and videos, project management, and community work by Firegram.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://firegram-portfolio.vercel.app/assets/hero-sculpture.webp">
-  <title>Firegram · Ideas into existence.</title>
+  <meta property="og:image" content="https://firegram-portfolio.vercel.app/assets/firegram-portrait.webp">
+  <meta property="og:image:alt" content="Portrait of Firegram in a black jacket against a grey background.">
+  <title>Firegram · Web apps, AI content & communities</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="font" href="assets/fonts/barlow-condensed-600.woff" type="font/woff" crossorigin>
   <link rel="preload" as="font" href="assets/fonts/manrope-variable.woff" type="font/woff" crossorigin>
   <link rel="preload" as="image" href="assets/hero-sculpture.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles/portfolio.css">
-  <noscript><style>@media(max-width:767px){.desktop-nav{display:flex;position:absolute;top:76px;left:0;right:0;justify-content:center;background:#141310;gap:24px}}</style></noscript>
+  <noscript><style>@media(max-width:767px){.desktop-nav{display:flex;position:absolute;top:76px;left:0;right:0;justify-content:center;background:#141619;gap:24px}}</style></noscript>
   <script src="proof-data.js" defer></script>
   <script src="portfolio.js" defer></script>
 </head>
 <body>
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="site-header">
     <a class="wordmark" href="#home" aria-label="Firegram home">firegram<span class="brand-spark" aria-hidden="true">*</span></a>
-    <span class="header-note">Independent mind.<br>Hands-on builder.</span>
+    <span class="header-note">Web apps. AI content.<br>Projects and communities.</span>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#work">Selected work <span>03</span></a>
-      <a href="#about">About</a>
-      <a href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      <a href="#about">About me</a>
+      <a href="#work">Proof of work</a>
+      <a href="#contact">Contact <svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
     </nav>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false" hidden><span>Menu</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></button>
     <div class="reading-progress" aria-hidden="true"><i id="reading-progress"></i></div>
   </header>
   <dialog class="site-menu" id="site-menu" aria-labelledby="menu-title">
     <div class="menu-top"><span class="wordmark">firegram<span class="brand-spark" aria-hidden="true">*</span></span><button class="menu-close" type="button" id="menu-close" autofocus>Close <span aria-hidden="true">×</span></button></div>
-    <p class="eyebrow" id="menu-title">A look inside</p>
+    <p class="eyebrow" id="menu-title">Sections</p>
     <nav class="menu-nav" aria-label="All sections">
-      <a href="#work"><span>01</span>Selected work<i aria-hidden="true">↗</i></a>
-      <a href="#about"><span>02</span>About & approach<i aria-hidden="true">↗</i></a>
-      <a href="#proof"><span>03</span>Proof of work<i aria-hidden="true">↗</i></a>
-      <a href="#experience"><span>04</span>Experience<i aria-hidden="true">↗</i></a>
-      <a href="#contact"><span>05</span>Let’s talk<i aria-hidden="true">↗</i></a>
+      <a href="#about"><span>01</span>About me<svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+      <a href="#work"><span>02</span>Proof of work<svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+      <a href="#experience"><span>03</span>Experience<svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+      <a href="#contact"><span>04</span>Contact<svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
     </nav>
-    <div class="menu-bottom"><span>Remote-first. Open to the world.</span><a href="mailto:olayemiqudus21@gmail.com">Say hello ↗</a></div>
+    <div class="menu-bottom"><button type="button" class="motion-toggle" id="motion-toggle" aria-pressed="true" hidden>Motion <span id="motion-state">on</span><span class="motion-indicator" aria-hidden="true"></span></button><a href="mailto:olayemiqudus21@gmail.com">Send an email <svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></div>
   </dialog>
   <main id="main">
-    <section class="hero chapter" id="home" aria-labelledby="hero-title" data-chapter="01">
+    <section class="hero chapter" id="home" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true"><img id="hero-image" src="assets/hero-sculpture.webp" alt="" width="1672" height="941" fetchpriority="high"></div>
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="eyebrow hero-entry entry-1"><span class="small-spark" aria-hidden="true">*</span> Product thinking / Creative instinct</p>
-        <h1 id="hero-title"><span class="title-line"><span class="hero-entry entry-2">Ideas into</span></span><span class="title-line"><span class="hero-entry entry-3">existence<span class="title-stop">.</span></span></span></h1>
-        <p class="hero-description hero-entry entry-4">I’m Firegram. I build digital products, create with AI,<br class="desktop-break"> and bring communities together.</p>
-        <a class="pill-link hero-entry entry-5" href="#work"><span>Explore the work</span><span class="button-arrow" aria-hidden="true">↘</span></a>
+        <p class="eyebrow hero-entry entry-1"><span class="small-spark" aria-hidden="true">*</span> Firegram / Independent builder</p>
+        <h1 id="hero-title"><span class="title-line"><span class="hero-entry entry-2">I build</span></span><span class="title-line"><span class="hero-entry entry-3">web apps<span class="title-stop">.</span></span></span></h1>
+        <p class="hero-description hero-entry entry-4">I create AI images and videos.<br>I manage projects and online communities.</p>
+        <a class="pill-link hero-entry entry-5" href="#work"><span>See my work</span><span class="button-arrow"><svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></span></a>
       </div>
-      <div class="hero-bottom"><span>Software / AI / Communities</span><a href="#work" class="scroll-cue">Scroll to explore <span aria-hidden="true">↓</span></a><span class="hero-edition">Selected portfolio / 2026</span></div>
+      <div class="hero-bottom"><a href="#about" class="scroll-cue">Scroll to explore <svg class="arrow-icon scroll-arrow" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></div>
     </section>
-    <section class="intro section-pad" aria-labelledby="intro-title">
-      <p class="eyebrow" data-reveal>A thought, then a thing.</p>
-      <div class="intro-grid">
-        <h2 id="intro-title" data-reveal>I see what could be.<br><span>Then I get to work.</span></h2>
-        <div class="intro-copy" data-reveal><p>Some ideas need a product. Some need a story. Some need people who care.</p><p>I work where those things meet: spotting what’s missing, testing a direction, and building something people can actually use.</p><a class="text-link" href="#about">The way I work <span aria-hidden="true">↗</span></a></div>
-      </div>
-    </section>
-    <section class="work chapter section-pad" id="work" aria-labelledby="work-title" data-chapter="02">
-      <div class="section-topline"><p class="eyebrow" data-reveal>01 / Selected work</p><span class="eyebrow" data-reveal>From idea to browser</span></div>
-      <div class="section-heading" data-reveal><h2 id="work-title">Not just<br><span class="serif-word">possibilities.</span></h2><p>A few things I’ve put into the world.<br>Open them. Try them. See the thinking.</p></div>
-      <article class="project project-featured" aria-labelledby="risk-title">
-        <a class="project-image risk-image" href="https://riskmulate.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open RiskMulate live project in a new tab" data-reveal>
-          <img src="assets/riskmulate.webp" width="1363" height="936" alt="RiskMulate’s Factory Shift start screen, showing an industrial simulation and its inspect, decide, operate, learn sequence." loading="lazy" decoding="async">
-          <span class="project-open"><span>Open project</span><span aria-hidden="true">↗</span></span><span class="image-caption">Live product capture / RiskMulate</span>
-        </a>
-        <div class="project-details" data-reveal><div class="project-name"><span class="project-number">01</span><h3 id="risk-title">RiskMulate</h3></div><div class="project-description"><p>A risk lesson you can walk through. A browser-based 3D simulation that turns decisions into visible consequences.</p><div class="project-bottom"><span class="project-tags">Product / Simulation / Three.js</span><a class="text-link" href="https://github.com/TheFiregram/RiskMulate" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a></div></div></div>
-      </article>
-      <div class="project-pair">
-        <article class="project" aria-labelledby="wallet-title">
-          <a class="project-image wallet-image" href="https://wallet-gpt-2.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open WalletGPT live project in a new tab" data-reveal><img src="assets/walletgpt.webp" width="1363" height="936" alt="WalletGPT’s dark interface with the line Every wallet has a story." loading="lazy" decoding="async"><span class="project-open"><span>Open project</span><span aria-hidden="true">↗</span></span></a>
-          <div class="project-details" data-reveal><div class="project-name"><span class="project-number">02</span><h3 id="wallet-title">WalletGPT</h3></div><div class="project-description"><p>Making wallet activity make sense. Blockchain data, explained through conversation.</p><div class="project-bottom"><span class="project-tags">AI / Web3 / Product</span><a class="text-link" href="https://github.com/TheFiregram/WalletGPT" target="_blank" rel="noopener noreferrer" aria-label="View WalletGPT source">Source <span aria-hidden="true">↗</span></a></div></div></div>
-        </article>
-        <article class="project project-offset" aria-labelledby="gram-title">
-          <a class="project-image gram-image" href="https://gramverter.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open GRAMVERTER live project in a new tab" data-reveal><img src="assets/gramverter.webp" width="1363" height="936" alt="GRAMVERTER’s crypto and fiat currency converter. Values shown are from a saved product capture, not current market prices." loading="lazy" decoding="async"><span class="project-open"><span>Open project</span><span aria-hidden="true">↗</span></span></a>
-          <div class="project-details" data-reveal><div class="project-name"><span class="project-number">03</span><h3 id="gram-title">GRAMVERTER</h3></div><div class="project-description"><p>Less friction between currencies. A focused crypto and fiat converter with live data and caching.</p><div class="project-bottom"><span class="project-tags">Software / Live data</span><a class="text-link" href="https://github.com/TheFiregram/GRAMVERTER" target="_blank" rel="noopener noreferrer" aria-label="View GRAMVERTER source">Source <span aria-hidden="true">↗</span></a></div></div></div>
-        </article>
-      </div>
-      <div class="work-end" data-reveal><span>There’s more behind the finished thing.</span><a class="text-link" href="#proof">Explore the proof archive <span aria-hidden="true">↗</span></a></div>
-    </section>
-    <section class="about chapter section-pad" id="about" aria-labelledby="about-title" data-chapter="03">
-      <div class="section-topline"><p class="eyebrow" data-reveal>02 / The person behind it</p><span class="eyebrow" data-reveal>Different tools. Same instinct.</span></div>
-      <div class="about-grid">
-        <div class="about-statement"><h2 id="about-title" data-reveal>Builder.<br>Thinker.<br><span class="serif-word">People person.</span></h2><p class="about-signature" data-reveal>That’s Firegram.</p></div>
-        <div class="about-copy"><p class="large-copy" data-reveal>I’m at my best when I can see what something could become, and help it get there.</p><p data-reveal>I’ve worked across community operations, project management, software, and AI creation. The tools change. The habit stays: look closely, ask better questions, make the next version.</p><p data-reveal>I’m comfortable calling out a direction that isn’t working, then getting hands-on with the fix. A product flow, a community plan, a visual concept. I care about the whole thing.</p><a class="text-link" data-reveal href="https://ember-wrist-573.notion.site/Firegram-Community-Manager-and-Builder-25a2c1a6abe7805e96d5d0a60985b316" target="_blank" rel="noopener noreferrer">Read the longer story <span aria-hidden="true">↗</span></a></div>
-      </div>
-      <div class="approach" id="strengths" aria-labelledby="approach-title">
-        <div class="approach-heading" data-reveal><p class="eyebrow">How I work</p><h3 id="approach-title">Curiosity, with<br>a follow-through.</h3></div>
-        <div class="approach-steps">
-          <div class="approach-step" data-reveal><span>01</span><div><h4>Find the real gap.</h4><p>Look past the first idea. Work out what people need, what’s missing, and what’s worth making.</p></div></div>
-          <div class="approach-step" data-reveal><span>02</span><div><h4>Make it tangible.</h4><p>A working prototype, a visual direction, a community plan. Something real enough to question.</p></div></div>
-          <div class="approach-step" data-reveal><span>03</span><div><h4>Test. Refine. Ship.</h4><p>Be honest about what doesn’t work. Keep the useful parts. Put the better version in people’s hands.</p></div></div>
+    <section class="about chapter section-pad" id="about" aria-labelledby="about-title" data-chapter="01">
+      <div class="section-topline"><p class="eyebrow" data-reveal>01 / About me</p><span class="eyebrow" data-reveal>Olayemi Qudus / Firegram</span></div>
+      <div class="profile-layout">
+        <figure class="profile-photo" data-reveal><img src="assets/firegram-portrait.webp" width="1122" height="1402" alt="Firegram in a black jacket against a grey background." loading="lazy" decoding="async"><figcaption><span>Olayemi Qudus</span><span>Firegram</span></figcaption></figure>
+        <div class="profile-copy">
+          <h2 id="about-title" data-reveal>I’m <span class="serif-word">Firegram.</span></h2>
+          <p class="profile-intro" data-reveal>I build web apps and use AI to create images and videos. I manage online communities and help teams plan and deliver projects.</p>
+          <div class="skills-list" id="strengths" aria-labelledby="skills-title">
+            <h3 class="eyebrow" id="skills-title" data-reveal>What I can do</h3>
+            <div class="skill-row" data-reveal><h4>Web apps</h4><p>Design and build tools that people can use in a browser.</p></div>
+            <div class="skill-row" data-reveal><h4>AI content</h4><p>Create images and videos. Teach people how to use AI tools.</p></div>
+            <div class="skill-row" data-reveal><h4>Community management</h4><p>Support members, lead moderators, and run online events.</p></div>
+            <div class="skill-row" data-reveal><h4>Project management</h4><p>Set priorities, plan tasks, and coordinate the team.</p></div>
+          </div>
+          <a class="text-link" data-reveal href="https://ember-wrist-573.notion.site/Firegram-Community-Manager-and-Builder-25a2c1a6abe7805e96d5d0a60985b316" target="_blank" rel="noopener noreferrer">Read my full profile <svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
         </div>
       </div>
     </section>
-    <section class="interlude" aria-label="Always a work in progress">
-      <div class="interlude-image" aria-hidden="true"></div>
-      <div class="interlude-copy" data-reveal><p class="eyebrow">The thread through all of it</p><p>Never just<br><em>the idea.</em></p><span>Always what comes next.</span></div>
+    <section class="work chapter section-pad" id="work" aria-labelledby="work-title" data-chapter="02">
+      <div class="section-topline"><p class="eyebrow" data-reveal>02 / Proof of work</p><span class="eyebrow" data-reveal>Web apps & project records</span></div>
+      <div class="section-heading" data-reveal><h2 id="work-title">Proof of<br><span class="serif-word">work.</span></h2><p>Try the apps.<br>Read the project records.</p></div>
+      <article class="project project-featured" aria-labelledby="wallet-title">
+        <a class="project-image wallet-image" href="https://wallet-gpt-2.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open WalletGPT live project in a new tab" data-reveal><img src="assets/walletgpt.webp" width="1363" height="936" alt="WalletGPT’s dark interface with the line Every wallet has a story." loading="lazy" decoding="async"><span class="project-open"><span>Open project</span><span><svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></span></span><span class="image-caption">WalletGPT / Web app</span></a>
+        <div class="project-details" data-reveal><div class="project-name"><span class="project-number">01</span><h3 id="wallet-title">WalletGPT</h3></div><div class="project-description"><p>An AI chat app that explains wallet activity in plain language.</p><div class="project-bottom"><span class="project-tags">AI / Web3 / Software</span><a class="text-link" href="https://github.com/TheFiregram/WalletGPT" target="_blank" rel="noopener noreferrer" aria-label="View WalletGPT source">Source <svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></div></div></div>
+      </article>
+      <div class="project-pair">
+        <article class="project" aria-labelledby="gram-title">
+          <a class="project-image gram-image" href="https://gramverter.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open GRAMVERTER live project in a new tab" data-reveal><img src="assets/gramverter.webp" width="1363" height="936" alt="GRAMVERTER’s crypto and fiat currency converter. This saved screen shows past market prices." loading="lazy" decoding="async"><span class="project-open"><span>Open project</span><span><svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></span></span></a>
+          <div class="project-details" data-reveal><div class="project-name"><span class="project-number">02</span><h3 id="gram-title">GRAMVERTER</h3></div><div class="project-description"><p>Convert crypto and fiat currencies with current market data.</p><div class="project-bottom"><span class="project-tags">Software / Live data</span><a class="text-link" href="https://github.com/TheFiregram/GRAMVERTER" target="_blank" rel="noopener noreferrer" aria-label="View GRAMVERTER source">Source <svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></div></div></div>
+        </article>
+        <article class="project project-offset" aria-labelledby="risk-title">
+          <a class="project-image risk-image" href="https://riskmulate.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open RiskMulate live project in a new tab" data-reveal><img src="assets/riskmulate.webp" width="1363" height="936" alt="RiskMulate’s Factory Shift start screen with an industrial simulation." loading="lazy" decoding="async"><span class="project-open"><span>Open project</span><span><svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></span></span></a>
+          <div class="project-details" data-reveal><div class="project-name"><span class="project-number">03</span><h3 id="risk-title">RiskMulate</h3></div><div class="project-description"><p>A 3D risk simulation in your browser. Inspect equipment, assess risks, and choose controls.</p><div class="project-bottom"><span class="project-tags">Simulation / Three.js</span></div></div></div>
+        </article>
+      </div>
+      <section class="proof-archive" id="proof" aria-labelledby="proof-title">
+        <div class="proof-heading" data-reveal><h3 id="proof-title">Work archive</h3><p>Apps, AI content, teaching, and community work.</p></div>
+        <div class="proof-controls" id="proof-controls" hidden><div class="proof-filters" role="group" aria-label="Filter proof of work"><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="product" aria-pressed="false">Product</button><button type="button" data-filter="software" aria-pressed="false">Software</button><button type="button" data-filter="ai" aria-pressed="false">AI & creative</button><button type="button" data-filter="community" aria-pressed="false">Community</button><button type="button" data-filter="web3" aria-pressed="false">Web3</button><button type="button" data-filter="teaching" aria-pressed="false">Teaching</button></div><p class="proof-count" id="proof-count" role="status" aria-live="polite" aria-atomic="true"></p></div>
+        <div class="proof-list" id="proof-list"></div>
+        <noscript><p>Read the work records in the archive below.</p></noscript>
+        <div class="archive-link" data-reveal><a class="text-link" href="https://ember-wrist-573.notion.site/CV-and-Proof-of-Work-21d2c1a6abe7800ba490c4bd30827fef" target="_blank" rel="noopener noreferrer">Open the full archive <svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></div>
+      </section>
     </section>
-    <section class="proof chapter section-pad" id="proof" aria-labelledby="proof-title" data-chapter="04">
-      <div class="section-topline"><p class="eyebrow" data-reveal>03 / A little less talk</p><span class="eyebrow" data-reveal>The work, on record</span></div>
-      <div class="proof-heading" data-reveal><h2 id="proof-title">Follow the <span class="serif-word">proof.</span></h2><p>Builds, experiments, community work, and the records behind them.</p></div>
-      <div class="proof-controls" id="proof-controls" hidden><div class="proof-filters" role="group" aria-label="Filter proof of work"><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="product" aria-pressed="false">Product</button><button type="button" data-filter="software" aria-pressed="false">Software</button><button type="button" data-filter="ai" aria-pressed="false">AI & creative</button><button type="button" data-filter="community" aria-pressed="false">Community</button><button type="button" data-filter="web3" aria-pressed="false">Web3</button><button type="button" data-filter="teaching" aria-pressed="false">Teaching</button></div><p class="proof-count" id="proof-count" role="status" aria-live="polite" aria-atomic="true"></p></div>
-      <div class="proof-list" id="proof-list"></div>
-      <noscript><p>Browse the complete collection in the proof archive below. Filters are available with JavaScript enabled.</p></noscript>
-      <div class="archive-link" data-reveal><a class="text-link" href="https://ember-wrist-573.notion.site/CV-and-Proof-of-Work-21d2c1a6abe7800ba490c4bd30827fef" target="_blank" rel="noopener noreferrer">Open the complete proof archive <span aria-hidden="true">↗</span></a></div>
-    </section>
-    <section class="experience chapter section-pad" id="experience" aria-labelledby="experience-title" data-chapter="05">
-      <div class="experience-layout"><div class="experience-heading" data-reveal><p class="eyebrow">04 / The path so far</p><h2 id="experience-title">Built on<br><span class="serif-word">experience.</span></h2><p>Years of working with people.<br>A growing habit of building things.</p></div><div class="experience-list">
-        <article class="experience-row" data-reveal><span class="experience-date">2025 – Present</span><div><p class="experience-company">Apehattan City</p><h3>Project Manager</h3><p>Project direction, planning, coordination, and standards. Promoted from Community Manager.</p></div><span class="role-marker" aria-label="Current role">Now</span></article>
-        <article class="experience-row" data-reveal><span class="experience-date">2023 – 2024</span><div><p class="experience-company">Apehattan City</p><h3>Community Manager</h3><p>Telegram, Discord, X, AMAs, and Spaces. Moderator coordination, sentiment, and retention.</p></div></article>
-        <article class="experience-row" data-reveal><span class="experience-date">2023 – 2024</span><div><p class="experience-company">SHIBU Doge Mascot</p><h3>Assistant Project Manager</h3><p>Strategy, content, community engagement, and outreach.</p></div></article>
-        <article class="experience-row" data-reveal><span class="experience-date">2022</span><div><p class="experience-company">Wallchain Labs</p><h3>Social Partner & Moderator</h3><p>Supported a 3,000+ member community with product guidance and scam prevention.</p></div></article>
-        <article class="experience-row" data-reveal><span class="experience-date">2019 – 2022</span><div><p class="experience-company">OkayGuy / BankCrash / MusicToken / SITDAO</p><h3>Community Manager & Moderator</h3><p>The foundations: daily operations, member support, and keeping communities connected.</p></div></article>
-        <details class="education" data-reveal><summary>Education & continued learning <span aria-hidden="true">+</span></summary><dl><div><dt>Computer Science</dt><dd>Global Wealth University / 2017–2020</dd></div><div><dt>Project Management</dt><dd>CIPM / 2020–2021</dd></div><div><dt>Public Speaking</dt><dd>The Phenomenals / 2021–2022</dd></div></dl></details>
+    <section class="experience chapter section-pad" id="experience" aria-labelledby="experience-title" data-chapter="03">
+      <div class="experience-layout"><div class="experience-heading" data-reveal><p class="eyebrow">03 / Experience</p><h2 id="experience-title">Work<br><span class="serif-word">experience.</span></h2><p>Project and community roles since 2019.</p></div><div class="experience-list">
+        <article class="experience-row" data-reveal><span class="experience-date">2025 – Present</span><div><p class="experience-company">Apehattan City</p><h3>Project Manager</h3><p>I plan projects, coordinate the team, and set work standards. Promoted from Community Manager.</p></div><span class="role-marker" aria-label="Current role">Now</span></article>
+        <article class="experience-row" data-reveal><span class="experience-date">2023 – 2024</span><div><p class="experience-company">Apehattan City</p><h3>Community Manager</h3><p>I managed Telegram, Discord, and X. I led moderators, hosted AMAs and Spaces, and tracked member feedback.</p></div></article>
+        <article class="experience-row" data-reveal><span class="experience-date">2023 – 2024</span><div><p class="experience-company">SHIBU Doge Mascot</p><h3>Assistant Project Manager</h3><p>I helped with project plans, content, member support, and outreach.</p></div></article>
+        <article class="experience-row" data-reveal><span class="experience-date">2022</span><div><p class="experience-company">Wallchain Labs</p><h3>Social Partner & Moderator</h3><p>I supported a community of more than 3,000 members with product help and scam prevention.</p></div></article>
+        <article class="experience-row" data-reveal><span class="experience-date">2019 – 2022</span><div><p class="experience-company">OkayGuy / BankCrash / MusicToken / SITDAO</p><h3>Community Manager & Moderator</h3><p>I managed daily community tasks and answered member questions.</p></div></article>
+        <details class="education" data-reveal><summary>Education <span aria-hidden="true">+</span></summary><dl><div><dt>Computer Science</dt><dd>Global Wealth University / 2017–2020</dd></div><div><dt>Project Management</dt><dd>CIPM / 2020–2021</dd></div><div><dt>Public Speaking</dt><dd>The Phenomenals / 2021–2022</dd></div></dl></details>
       </div></div>
     </section>
-    <section class="contact chapter section-pad" id="contact" aria-labelledby="contact-title" data-chapter="06">
-      <p class="eyebrow" data-reveal>05 / The next thing starts here</p>
-      <h2 id="contact-title" data-reveal>Got a good<br><span class="serif-word">what if?</span></h2>
-      <p class="contact-copy" data-reveal>A product to build. A story to tell. A community to bring together.</p>
-      <a class="contact-cta" href="mailto:olayemiqudus21@gmail.com" data-reveal><span>Let’s make it real.</span><span class="contact-arrow" aria-hidden="true">↗</span></a>
-      <div class="contact-meta"><a href="mailto:olayemiqudus21@gmail.com">olayemiqudus21@gmail.com</a><span>Remote-first / Global collaboration</span></div>
+    <section class="contact chapter section-pad" id="contact" aria-labelledby="contact-title" data-chapter="04">
+      <p class="eyebrow" data-reveal>04 / Contact</p>
+      <h2 id="contact-title" data-reveal>Tell me about<br><span class="serif-word">your project.</span></h2>
+      <p class="contact-copy" data-reveal>Send a short brief for a web app, AI content, or community work.</p>
+      <a class="contact-cta" href="mailto:olayemiqudus21@gmail.com" data-reveal><span>Send an email</span><span class="contact-arrow"><svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></span></a>
+      <div class="contact-meta"><a href="mailto:olayemiqudus21@gmail.com">olayemiqudus21@gmail.com</a><span>Available for remote work</span></div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="footer-top"><a class="wordmark" href="#home" aria-label="Firegram, back to top">firegram<span class="brand-spark" aria-hidden="true">*</span></a><nav class="social-links" aria-label="Social links"><a href="https://x.com/TheFiregram" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/TheFiregram" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/firegram" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://t.me/TheFiregram" target="_blank" rel="noopener noreferrer">Telegram ↗</a><a href="https://linktr.ee/firegram" target="_blank" rel="noopener noreferrer">All links ↗</a></nav></div>
-    <div class="footer-bottom"><span>© <span id="year">2026</span> Firegram</span><span>Thoughtfully made. Always in progress.</span><button type="button" class="motion-toggle" id="motion-toggle" aria-pressed="true" hidden>Motion <span id="motion-state">on</span><span class="motion-indicator" aria-hidden="true"></span></button><a class="back-top" href="#home">Back to top <span aria-hidden="true">↑</span></a></div>
-  </footer>
+  <footer class="footer"><span>2026 Firegram</span><a class="back-top" href="#home">Back to top <svg class="arrow-icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></footer>
 </body>
 </html>

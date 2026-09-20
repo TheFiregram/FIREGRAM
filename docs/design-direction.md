@@ -2,13 +2,13 @@
 
 ## Brief and architecture
 
-Hero extraction: dark cinematic center. Monumental condensed typography over an original, copper-lit titanium sculpture. Charcoal, warm off-white, muted copper. Centered visual gravity, quiet wordmark navigation, one main action. Small labels and hairline rules support the composition.
+Hero: large condensed type over the original titanium sculpture, now styled in greyscale. The supplied portrait sets the palette: charcoal from the jacket, cool grey from the background, and a restrained warm accent. Centered composition, small wordmark navigation, one main action.
 
 Page read: a portfolio intended to prompt exploration and useful conversations. The visitor needs to see what Firegram builds, inspect the evidence, and know how he works. Existing products, career history, and links remain the source of truth. No invented client logos, endorsements, or performance metrics.
 
-Sequence: cinematic hero; short introduction; asymmetric work gallery with a dominant flagship; editorial about split and numbered approach; full-bleed visual break; filterable evidence list; experience timeline; single-action contact section; minimal footer.
+Sequence: hero; About me with the supplied portrait; Proof of work with WalletGPT first, GRAMVERTER second, and RiskMulate third; the work archive in the same chapter; experience; contact; a footer with 2026 Firegram and Back to top. About is section 01 and Proof of work is section 02.
 
-The bright work section is one continuous paper-toned chapter. Subsequent chapters return to subtle charcoal tone changes, continuing the same typography and spacing system.
+The bright work section uses cool grey. The other sections use two charcoal tones. Copy follows Firegram’s STE-100 clarity preferences: short sentences, active voice, and concrete descriptions of the work. Arrow controls use one SVG icon. The hero cue rotates the icon down and sits at the bottom centre.
 
 ## Skill guides applied
 
@@ -25,6 +25,7 @@ These guides were read and applied to this rebuild, not installed as executable 
 | --- | --- | --- |
 | Hero labels, heading, copy, CTA | Staggered opacity and 24px rise | 500ms each; total sequence 740ms |
 | Hero sculpture | Small scroll-linked translate and scale | One scroll-scheduled animation frame, stops outside hero |
+| Scroll cue | Down arrow moves 6px and returns | Three 1.4s cycles; reduced-motion aware |
 | Sections and images | One-time rise/fade; image inset reveal | 650–750ms |
 | Anchor links | Native smooth scroll | Browser controlled; immediate from keyboard |
 | Full-screen menu | Clip entrance and short fade exit | 380ms entrance / 160ms exit |
@@ -32,7 +33,7 @@ These guides were read and applied to this rebuild, not installed as executable 
 | Proof filters | Short entrance on visible records | 350ms; capped 35ms stagger |
 | Reading progress | Transform-based progress line | Scroll frame only |
 
-No wheel or touch scroll hijacking. No artificial loader, sound, perpetual animation, or new runtime library. Native dialog handles focus containment and Escape. Anchors focus the destination heading. System reduced motion wins over the stored user preference; the footer can disable motion independently.
+No wheel or touch scroll hijacking. No artificial loader, sound, perpetual animation, or new runtime library. Native dialog handles focus containment and Escape. Anchors focus the destination heading. System reduced motion wins over the stored user preference; the menu can disable motion independently.
 
 ## Asset provenance
 
@@ -44,7 +45,9 @@ The three work images were captured from the real live sites on 2026-09-19:
 - https://wallet-gpt-2.vercel.app
 - https://gramverter.vercel.app
 
-They are saved product captures, not interactive embeds. Currency values in the GRAMVERTER capture are illustrative historical screen content, not a current quote. The existing profile WebP could not be decoded reliably, so it is not used.
+They are saved product captures, not interactive embeds. Currency values in the GRAMVERTER capture are historical screen content.
+
+The portrait was supplied by Firegram on 2026-09-20. The original JPEG is unchanged. `assets/firegram-portrait.webp` is a 1122 × 1402 WebP copy, compressed for delivery. No crop, face edits, or generated replacement was used.
 
 The hero image was created with the built-in image-generation tool. Project asset: `assets/hero-sculpture.webp`. Source output was optimized to WebP for delivery. No generated image is presented as a product screenshot.
 

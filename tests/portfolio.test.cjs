@@ -49,9 +49,19 @@ function boot({ reduced = false, storage = null, hash = "", dialog = true, obser
     check(img.hasAttribute("width") && img.hasAttribute("height"), "Image dimensions reserve layout space");
   });
   [...d.querySelectorAll("a[target='_blank']")].forEach((link) => check(link.rel.includes("noopener") && link.rel.includes("noreferrer"), "External tab safety"));
-  check(d.querySelectorAll(".proof-row").length === 10, "All ten proof records");
-  check(d.querySelector(".proof-count").textContent === "10 records", "Initial live count");
-  const expected = { ai: 3, software: 5, community: 3, web3: 4, teaching: 2, product: 6, all: 10 };
+  check([...d.querySelectorAll("main > section")].map((section) => section.id).join(",") === "home,about,work,experience,contact", "About directly follows hero, then proof of work");
+  check(d.querySelector("#about .eyebrow").textContent.startsWith("01") && d.querySelector("#work .eyebrow").textContent.startsWith("02"), "About and work section numbers");
+  check([...d.querySelectorAll(".project h3")].map((heading) => heading.textContent).join(",") === "WalletGPT,GRAMVERTER,RiskMulate", "Requested project order");
+  check(d.querySelector("#about img").getAttribute("src") === "assets/firegram-portrait.webp", "User portrait in About");
+  check(d.querySelector(".scroll-cue").hash === "#about" && d.querySelector(".scroll-cue svg use"), "Scroll cue points to About with an SVG icon");
+  check(!/[↗↘↑↓→]/.test(d.body.textContent), "Arrow controls use icons, not text glyphs");
+  check(!d.querySelector('a[href="https://github.com/TheFiregram/RiskMulate"]'), "RiskMulate source entry removed");
+  check(d.querySelector("footer").textContent.replace(/\s+/g, " ").trim() === "2026 FiregramBack to top", "Footer has only the requested text and control");
+  check(d.querySelector("#site-menu #motion-toggle"), "Motion setting remains available in menu");
+  check(d.querySelectorAll(".proof-row").length === 9, "All nine proof records");
+  check(d.querySelector(".proof-count").textContent === "09 records", "Initial live count");
+  check([...d.querySelectorAll(".proof-row h4")].slice(0, 3).map((heading) => heading.textContent).join(",") === "WalletGPT,GRAMVERTER,RiskMulate", "Archive follows requested project order");
+  const expected = { ai: 3, software: 4, community: 3, web3: 4, teaching: 2, product: 5, all: 9 };
   for (const [filter, count] of Object.entries(expected)) {
     d.querySelector('[data-filter="' + filter + '"]').click();
     check(d.querySelectorAll(".proof-row:not([hidden])").length === count, filter + " count");
@@ -60,10 +70,10 @@ function boot({ reduced = false, storage = null, hash = "", dialog = true, obser
   }
   d.querySelector(".desktop-nav a").click();
   await flush();
-  check(app.window.location.hash === "#work", "Section URL updates");
-  check(app.calls.at(-1).id === "work", "Navigation reaches selected section");
+  check(app.window.location.hash === "#about", "Section URL updates");
+  check(app.calls.at(-1).id === "about", "Navigation reaches selected section");
   check(app.calls.at(-1).behavior === "auto", "Keyboard click is immediate");
-  check(d.activeElement.id === "work-title", "Heading receives focus");
+  check(d.activeElement.id === "about-title", "Heading receives focus");
   d.getElementById("menu-toggle").click();
   check(d.getElementById("site-menu").open, "Menu opens");
   check(d.body.classList.contains("menu-open"), "Menu scroll lock");
