@@ -13,7 +13,7 @@
   const title = el("h1", "case-title", item.title);
   const intro = el("p", "case-intro", item.intro);
   root.append(back, kicker, title, intro);
-  if (item.visual) { const figure = el("figure", "case-visual"); const img = el("img"); img.src = item.visual; img.alt = item.title + " project visual"; img.loading = "eager"; figure.append(img); root.append(figure); }
+  if (item.visual) { const figure = el("figure", "case-visual"); const img = el("img"); img.src = item.visual; img.alt = item.title + " project visual"; img.loading = "eager"; img.width = 1363; img.height = 936; figure.append(img); root.append(figure); }
   const grid = el("div", "case-grid");
   const problem = el("section"); problem.append(el("h2", "", "The problem"), el("p", "", item.problem));
   const work = el("section"); work.append(el("h2", "", "What I did")); const ul = el("ul"); item.work.forEach(line => ul.append(el("li", "", line))); work.append(ul);
