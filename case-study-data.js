@@ -20,12 +20,12 @@ window.FIREGRAM_CASE_STUDIES = {
     outcome: "A working browser-based simulation that turns risk-management decisions into an interactive exercise.",
     live: "https://riskmulate.vercel.app", source: "https://github.com/TheFiregram/RiskMulate", visual: "assets/riskmulate.webp"
   },
-  apehattan: {
-    title: "Apehattan City", type: "Web3 · Project and community leadership", intro: "Community operations grew into project coordination and delivery.",
-    problem: "Growing projects need more than conversation in chat: teams need priorities, clear ownership, and consistent follow-through.",
-    work: ["Managed community channels and member support before moving into project management.", "Coordinated team tasks, project priorities, and delivery standards.", "Connected community feedback with day-to-day project work."],
-    outcome: "Progression from Community Manager to Project Manager, reflecting broader responsibility across community and delivery.",
-    live: "https://ember-wrist-573.notion.site/CV-and-Proof-of-Work-21d2c1a6abe7800ba490c4bd30827fef", visual: "assets/firegram-portrait.webp"
+  alphaailabs: {
+    title: "AlphaAILabs", type: "AI · Community management", intro: "My current community management role with AlphaAILabs.",
+    problem: "AI projects need clear communication and an active community where people can follow updates and engage with the team.",
+    work: ["Work with AlphaAILabs in a community management role.", "Support ongoing community engagement and communication.", "Have been with the team for around 368 days as of October 2026."],
+    outcome: "Current professional experience in the AI space, alongside my wider work in Web3 communities and building products.",
+    live: "https://x.com/alphaailabs", visual: "assets/firegram-portrait.webp"
   },
   community: {
     title: "Web3 community operations", type: "Community management · Moderation", intro: "The operating work behind healthy, useful online communities.",
