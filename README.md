@@ -7,7 +7,7 @@ A cinematic, continuous-scroll portfolio for Firegram / Olayemi Qudus.
 - `index.html`: complete semantic page, navigation, work, about, proof, experience, and contact.
 - `styles/portfolio.css`: the design system, responsive layouts, motion, and print styles.
 - `portfolio.js`: accessible menu, native anchor navigation, progressive reveals, motion preference, and proof filters.
-- `proof-data.js`: nine editable proof records and their original links.
+- `proof-data.js`: nine editable proof records linked to individual case-study URLs.\n- `case-study.html`, `case-study.js`, `case-study-data.js`: a shared accessible case-study layout with nine project-specific records.
 - `assets/firegram-portrait.webp`: the supplied portrait, optimized for the web.
 - `assets/hero-sculpture.webp`: original generated editorial artwork.
 - `assets/fonts/`: preloaded, self-hosted fonts and their license files.

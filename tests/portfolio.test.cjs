@@ -49,7 +49,7 @@ function boot({ reduced = false, storage = null, hash = "", dialog = true, obser
     check(img.hasAttribute("width") && img.hasAttribute("height"), "Image dimensions reserve layout space");
   });
   [...d.querySelectorAll("a[target='_blank']")].forEach((link) => check(link.rel.includes("noopener") && link.rel.includes("noreferrer"), "External tab safety"));
-  check([...d.querySelectorAll("main > section")].map((section) => section.id).join(",") === "home,about,work,experience,contact", "About directly follows hero, then proof of work");
+  check([...d.querySelectorAll("main > section")].map((section) => section.id).join(",") === "home,about,work,experience,services,contact", "About directly follows hero, then proof of work");
   check(d.querySelector("#about .eyebrow").textContent.startsWith("01") && d.querySelector("#work .eyebrow").textContent.startsWith("02"), "About and work section numbers");
   check([...d.querySelectorAll(".project h3")].map((heading) => heading.textContent).join(",") === "WalletGPT,GRAMVERTER,RiskMulate", "Requested project order");
   check(d.querySelector("#about img").getAttribute("src") === "assets/firegram-portrait.webp", "User portrait in About");
