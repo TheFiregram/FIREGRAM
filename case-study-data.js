@@ -22,10 +22,17 @@ window.FIREGRAM_CASE_STUDIES = {
   },
   alphaailabs: {
     title: "AlphaAILabs", type: "AI · Community management", intro: "My current community management role with AlphaAILabs.",
-    problem: "AI projects need clear communication and an active community where people can follow updates and engage with the team.",
-    work: ["Work with AlphaAILabs in a community management role.", "Support ongoing community engagement and communication.", "Have been with the team for around 368 days as of October 2026."],
-    outcome: "Current professional experience in the AI space, alongside my wider work in Web3 communities and building products.",
+    problem: "AI projects need clear communication, consistent community operations, and a clear way for committed members to contribute.",
+    work: ["Develop and execute the ambassadors campaign strategy.", "Oversee community operations and engagement.", "Recruit core community members and empower them to take leadership roles."],
+    outcome: "A community structure focused on coordinated campaign execution, member ownership, and stronger community leadership.",
     live: "https://x.com/alphaailabs", visual: "assets/firegram-portrait.webp"
+  },
+  apehattan: {
+    title: "Apehattan City", type: "GameFi · Project management", intro: "A past project management role with the Apehattan City GameFi project.",
+    problem: "GameFi projects need coordination across project tasks, team communication, and community-facing work.",
+    work: ["Supported project planning and coordination.", "Helped keep team communication and tasks organized.", "Contributed to community-facing execution."],
+    outcome: "Project management experience within a Web3 GameFi project.",
+    live: "https://ember-wrist-573.notion.site/CV-and-Proof-of-Work-21d2c1a6abe7800ba490c4bd30827fef", visual: "assets/firegram-portrait.webp"
   },
   community: {
     title: "Web3 community operations", type: "Community management · Moderation", intro: "The operating work behind healthy, useful online communities.",
